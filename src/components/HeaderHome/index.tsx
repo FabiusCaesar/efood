@@ -1,11 +1,14 @@
 import { HeaderContainer, Logo, SloganText } from './styles'
 
 import logo from '../../assets/images/logo.png'
+import { Link } from 'react-router-dom'
 
-const Header = () => {
+const HeaderHome = () => {
   return (
     <HeaderContainer>
-      <Logo src={logo} />
+      <Link to="/">
+        <Logo src={logo} />
+      </Link>
       <SloganText>
         Viva experiências gastronômicas no conforto da sua casa
       </SloganText>
@@ -13,4 +16,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default HeaderHome

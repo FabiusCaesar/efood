@@ -1,18 +1,18 @@
+import React from 'react'
+
 import { ButtonContainer } from './styles'
 
 type Props = {
-  title: string
-  to?: string
+  children: React.ReactNode
+  title?: string
   onClick?: () => void
-  children: string
+  variant?: 'default' | 'prato'
 }
 
-const Button = ({ title, to, onClick, children }: Props) => {
-  return (
-    <ButtonContainer title={title} onClick={onClick}>
-      {children}
-    </ButtonContainer>
-  )
-}
+const Button = ({ children, title, onClick, variant = 'default' }: Props) => (
+  <ButtonContainer title={title} onClick={onClick} variant={variant}>
+    {children}
+  </ButtonContainer>
+)
 
 export default Button
