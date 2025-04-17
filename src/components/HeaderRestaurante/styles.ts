@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 import fundo from '../../assets/images/fundo.png'
 import colors from '../../styles/colors'
-import breakpoints from '../../styles/breakpoints'
+import {
+  headerRestauranteResponsive,
+  logoRestauranteResponsive
+} from '../../styles/mixins'
 
 export const HeaderContainer = styled.header`
   position: relative;
@@ -17,17 +20,7 @@ export const HeaderContainer = styled.header`
   font-weight: 900;
   color: ${colors.primary};
 
-  @media (max-width: ${breakpoints.desktop}) {
-    height: 100px;
-    font-size: 16px;
-    padding: 0 80px;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    height: 72px;
-    font-size: 12px;
-    padding: 0 16px;
-  }
+  ${headerRestauranteResponsive}
 `
 
 export const LeftSide = styled.div`
@@ -36,6 +29,16 @@ export const LeftSide = styled.div`
 
 export const RightSide = styled.div`
   z-index: 1;
+
+  .quebra-mobile {
+    display: none;
+  }
+
+  @media (max-width: 375px) {
+    .quebra-mobile {
+      display: inline;
+    }
+  }
 `
 
 export const Logo = styled.img`
@@ -45,11 +48,5 @@ export const Logo = styled.img`
   top: 50%;
   transform: translate(-50%, -50%);
 
-  @media (max-width: ${breakpoints.desktop}) {
-    height: 36px;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    height: 24px;
-  }
+  ${logoRestauranteResponsive}
 `

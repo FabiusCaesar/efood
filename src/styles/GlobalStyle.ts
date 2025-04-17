@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import colors from './colors'
+import { media } from './mixins'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -29,6 +30,10 @@ const GlobalStyle = createGlobalStyle`
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
+
+    ${media.desktop`
+        width: 90%;
+      `}
   }
 `
 export default GlobalStyle

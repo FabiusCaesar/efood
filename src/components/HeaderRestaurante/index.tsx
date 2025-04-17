@@ -14,7 +14,10 @@ const HeaderRestaurante = () => {
       </Link>
 
       <RightSide>
-        <div>0 - produto(s) no carrinho</div>
+        <span>
+          0 - produto(s)
+          <br className="quebra-mobile" /> no carrinho
+        </span>
       </RightSide>
     </HeaderContainer>
   )

@@ -1,11 +1,12 @@
-import Button from '../Button'
 import Tag from '../Tag'
 import {
   Avaliacao,
+  BotaoResponsivo,
   Card,
   CardContent,
   CardImg,
   Descricao,
+  DescricaoContainer,
   TagsWrapper,
   Titulo,
   TituloContainer
@@ -41,7 +42,9 @@ const RestauranteCard = ({
         {destaque && <Tag>Destaque da semana</Tag>}
         <Tag>{tipo}</Tag>
       </TagsWrapper>
+
       <CardImg src={imagemCard} alt={titulo} />
+
       <CardContent>
         <TituloContainer>
           <Titulo>{titulo}</Titulo>
@@ -50,8 +53,13 @@ const RestauranteCard = ({
             <img src={estrela} />
           </Avaliacao>
         </TituloContainer>
-        <Descricao>{descricao}</Descricao>
-        <Button title="Clique aqui para saber mais">Saiba mais</Button>
+
+        <DescricaoContainer>
+          <Descricao>{descricao}</Descricao>
+          <BotaoResponsivo title="Clique aqui para saber mais">
+            Saiba mais
+          </BotaoResponsivo>
+        </DescricaoContainer>
       </CardContent>
     </Card>
   )

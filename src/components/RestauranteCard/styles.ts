@@ -1,12 +1,15 @@
 import styled from 'styled-components'
 import colors from '../../styles/colors'
 import { Link } from 'react-router-dom'
+import { media } from '../../styles/mixins'
+import { ButtonContainer } from '../Button/styles'
 
 export const Card = styled(Link)`
   background-color: ${colors.white};
   color: ${colors.primary};
   position: relative;
-  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
 `
 
 export const TagsWrapper = styled.div`
@@ -17,15 +20,19 @@ export const TagsWrapper = styled.div`
   right: 16px;
 `
 
+export const CardImg = styled.img`
+  display: block;
+  width: 100%;
+`
+
 export const CardContent = styled.div`
   border: 1px solid ${colors.primary};
   border-top: none;
   padding: 8px;
-`
-
-export const CardImg = styled.img`
-  display: block;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
 `
 
 export const TituloContainer = styled.div`
@@ -46,10 +53,28 @@ export const Avaliacao = styled.div`
   font-weight: 700;
   gap: 8px;
 `
+export const DescricaoContainer = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+`
 
 export const Descricao = styled.p`
   font-size: 14px;
   line-height: 22px;
   display: block;
   margin: 16px 0;
+
+  ${media.mobile`
+    margin-bottom: 0;
+  `}
+`
+
+export const BotaoResponsivo = styled(ButtonContainer)`
+  width: fit-content;
+
+  ${media.mobile`
+    display: none;
+  `}
 `
