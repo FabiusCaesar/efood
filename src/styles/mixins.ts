@@ -41,7 +41,6 @@ export const logoHomeResponsive = css`
   @media (max-width: ${breakpoints.mobile}) {
     margin-top: 16px;
     margin-bottom: 16px;
-    height: 24px;
   }
 `
 
@@ -76,10 +75,6 @@ export const headerRestauranteResponsive = css`
 export const logoRestauranteResponsive = css`
   @media (max-width: ${breakpoints.desktop}) {
     height: 36px;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    height: 24px;
   }
 `
 

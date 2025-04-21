@@ -6,7 +6,7 @@ type BannerProps = {
   backgroundImage: string
 }
 
-export const Banner = styled.div<BannerProps>`
+export const Container = styled.div<BannerProps>`
   height: 280px;
   width: 100%;
   background-image: url(${(props) => props.backgroundImage});
@@ -55,32 +55,5 @@ export const Nome = styled.h2`
 
   ${media.mobile`
     font-size: 18px;
-  `}
-`
-
-export const Container = styled.section`
-  padding: 56px 0 120px;
-
-  ${media.tablet`
-  padding: 56px 0 72px;
-    `}
-
-  ${media.mobile`
-    padding: 32px 0 32px;
-  `}
-`
-
-export const PratosList = styled.ul`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 32px;
-  justify-items: center;
-
-  ${media.desktop`
-    grid-template-columns: 1fr 1fr;
-  `}
-
-  ${media.mobile`
-    grid-template-columns: 1fr;
   `}
 `
