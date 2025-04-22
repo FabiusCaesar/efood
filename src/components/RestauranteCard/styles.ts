@@ -22,7 +22,10 @@ export const TagsWrapper = styled.div`
 
 export const CardImg = styled.img`
   display: block;
+  object-fit: cover;
   width: 100%;
+  max-width: 472px;
+  max-height: 217px;
 `
 
 export const CardContent = styled.div`

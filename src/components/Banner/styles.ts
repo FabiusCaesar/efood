@@ -11,6 +11,7 @@ export const Container = styled.div<BannerProps>`
   width: 100%;
   background-image: url(${(props) => props.backgroundImage});
   background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,6 +19,17 @@ export const Container = styled.div<BannerProps>`
   font-size: 18px;
   font-weight: 900;
   color: ${colors.primary};
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    content: '';
+  }
 
   ${media.desktop`
     height: 200px;
@@ -34,6 +46,7 @@ export const Tipo = styled.h3`
   font-size: 32px;
   font-weight: 100;
   color: ${colors.white};
+  z-index: 1;
 
   ${media.desktop`
     font-size: 24px;
@@ -48,6 +61,7 @@ export const Nome = styled.h2`
   font-size: 32px;
   font-weight: 900;
   color: ${colors.white};
+  z-index: 1;
 
   ${media.desktop`
     font-size: 24px;

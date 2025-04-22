@@ -13,37 +13,25 @@ import {
 } from './styles'
 
 import estrela from '../../assets/images/estrela_avaliacao.png'
-
-type Props = {
-  id: number
-  titulo: string
-  tipo: string
-  avaliacao: number
-  descricao: string
-  slug: string
-  destaque?: boolean
-}
+import { RestauranteModel } from '../../models/RestauranteModel'
 
 const RestauranteCard = ({
   id,
   titulo,
+  destacado,
   tipo,
   avaliacao,
   descricao,
-  slug,
-  destaque
-}: Props) => {
-  const imagemCard = require(
-    `../../assets/images/restaurantes/${slug}/imagem_card.png`
-  )
+  capa
+}: RestauranteModel) => {
   return (
     <Card to={`/restaurante/${id}`}>
       <TagsWrapper>
-        {destaque && <Tag>Destaque da semana</Tag>}
+        {destacado == true && <Tag>Destaque da semana</Tag>}
         <Tag>{tipo}</Tag>
       </TagsWrapper>
 
-      <CardImg src={imagemCard} alt={titulo} />
+      <CardImg src={capa} alt={titulo} />
 
       <CardContent>
         <TituloContainer>

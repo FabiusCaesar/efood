@@ -1,19 +1,21 @@
+import { PratoModel } from '../../models/RestauranteModel'
 import Button from '../Button'
 import { Card, CardContent, Descricao, Img, Titulo } from './styles'
 
-type Props = {
-  nome: string
-  descricao: string
-  imagem: string
-}
+const PratoCard = ({ nome, descricao, foto }: PratoModel) => {
+  const getDescricao = (descricao: string) => {
+    if (descricao.length > 140) {
+      return descricao.slice(0, 137) + '...'
+    }
+    return descricao
+  }
 
-const PratoCard = ({ nome, descricao, imagem }: Props) => {
   return (
     <Card>
-      <Img src={imagem} alt={nome} />
+      <Img src={foto} alt={nome} />
       <Titulo>{nome}</Titulo>
       <CardContent>
-        <Descricao>{descricao}</Descricao>
+        <Descricao>{getDescricao(descricao)}</Descricao>
         <Button title={`Adicionar ${nome} ao carrinho`} variant="prato">
           Adicionar ao carrinho
         </Button>

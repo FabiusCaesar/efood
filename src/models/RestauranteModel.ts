@@ -1,37 +1,19 @@
-class RestauranteModel {
+export type PratoModel = {
+  id: number
+  foto: string
+  preco: number
+  nome: string
+  descricao: string
+  porcao: string
+}
+
+export type RestauranteModel = {
   id: number
   titulo: string
+  destacado: boolean
   tipo: string
   avaliacao: number
   descricao: string
-  slug: string
-  destaque?: boolean
-
-  constructor({
-    id,
-    titulo,
-    tipo,
-    avaliacao,
-    descricao,
-    slug,
-    destaque
-  }: {
-    id: number
-    titulo: string
-    tipo: string
-    avaliacao: number
-    descricao: string
-    slug: string
-    destaque?: boolean
-  }) {
-    this.id = id
-    this.titulo = titulo
-    this.tipo = tipo
-    this.avaliacao = avaliacao
-    this.descricao = descricao
-    this.slug = slug
-    this.destaque = destaque
-  }
+  capa: string
+  cardapio: PratoModel[]
 }
-
-export default RestauranteModel
