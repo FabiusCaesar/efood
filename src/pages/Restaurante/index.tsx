@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import restaurantes from '../../data/restaurantes'
 import PratosList from '../../components/PratosList'
 import Banner from '../../components/Banner'
+import Header from '../../components/Header'
+import Footer from '../../components/Footer'
 
 const Restaurante = () => {
   const { id } = useParams()
@@ -20,12 +22,14 @@ const Restaurante = () => {
 
   return (
     <>
+      <Header type="restaurante" />
       <Banner
         imagem={imagemBanner}
         tipo={restaurante.tipo}
         nome={restaurante.titulo}
       />
       <PratosList />
+      <Footer />
     </>
   )
 }

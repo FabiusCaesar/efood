@@ -1,10 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import HomeLayout from './layouts/HomeLayout'
-import RestauranteLayout from './layouts/RestauranteLayout'
-
 import Home from './pages/Home'
 import Restaurante from './pages/Restaurante'
+
 import ScrollToTop from './components/ScrollToTop'
 
 const AppRoutes = () => (
@@ -12,14 +10,10 @@ const AppRoutes = () => (
     <ScrollToTop />
     <Routes>
       {/* Rota da Home */}
-      <Route path="/" element={<HomeLayout />}>
-        <Route index element={<Home />} />
-      </Route>
+      <Route path="/" element={<Home />} />
 
       {/* Rota do Restaurante */}
-      <Route path="/restaurante/:id" element={<RestauranteLayout />}>
-        <Route index element={<Restaurante />} />
-      </Route>
+      <Route path="/restaurante/:id" element={<Restaurante />} />
     </Routes>
   </BrowserRouter>
 )

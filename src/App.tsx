@@ -1,11 +1,11 @@
 import GlobalStyle from './styles/GlobalStyle'
-import Rotas from './routes'
+import AppRoutes from './routes'
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Rotas />
+      <AppRoutes />
     </>
   )
 }

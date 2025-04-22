@@ -20,61 +20,70 @@ export const media = {
   `
 }
 
-// Mixins específicos para HeaderHome
-export const headerContainerResponsive = css`
+// Mixins específicos para Header
+
+// Mixins específicos para HeaderContainer
+export const headerContainerHomeResponsive = css`
   @media (max-width: ${breakpoints.desktop}) {
-    height: 250px;
+    height: 200px;
   }
 
   @media (max-width: ${breakpoints.mobile}) {
-    height: 100px;
+    height: 120px;
   }
 `
 
-export const logoHomeResponsive = css`
-  @media (max-width: ${breakpoints.desktop}) {
-    margin-top: 36px;
-    margin-bottom: 50px;
-    height: 36px;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    margin-top: 16px;
-    margin-bottom: 16px;
-  }
-`
-
-export const sloganResponsive = css`
-  @media (max-width: ${breakpoints.desktop}) {
-    font-size: 24px;
-    line-height: 100%;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    font-size: 12px;
-    line-height: 100%;
-    margin: 12px;
-  }
-`
-
-// Mixins específicos para HeaderRestaurante
-export const headerRestauranteResponsive = css`
+export const headerContainerRestauranteResponsive = css`
   @media (max-width: ${breakpoints.desktop}) {
     height: 100px;
     font-size: 16px;
-    padding: 0 80px;
   }
 
   @media (max-width: ${breakpoints.mobile}) {
     height: 72px;
     font-size: 12px;
-    padding: 0 16px;
   }
 `
 
-export const logoRestauranteResponsive = css`
+// Mixins especíoficos para o LogoWrapper
+export const LogoWrapperResponsive = css`
+  @media (max-width: ${breakpoints.desktop}) {
+    height: 100px;
+    min-height: 100px;
+    padding: 0 56px;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    height: 72px;
+    min-height: 72px;
+    font-size: 16px;
+    padding: 0 16px;
+  }
+
+  @media (max-width: ${breakpoints.mobileSmall}) {
+    font-size: 12px;
+  }
+`
+
+// Mixins específicos para o Logo
+export const logoResponsive = css`
   @media (max-width: ${breakpoints.desktop}) {
     height: 36px;
+  }
+`
+
+// Mixins específicos para Slogan
+export const sloganResponsive = css`
+  @media (max-width: ${breakpoints.desktop}) {
+    font-size: 24px;
+    line-height: 100%;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    font-size: 16px;
+    line-height: 100%;
+    margin-bottom: 12px;
   }
 `
 

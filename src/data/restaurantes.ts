@@ -21,7 +21,7 @@ const restaurantes: RestauranteModel[] = [
     slug: 'la_dolce_vita_trattoria'
   }),
   new RestauranteModel({
-    id: 2,
+    id: 3,
     titulo: 'La Dolce Vita Trattoria',
     tipo: 'Italiana',
     avaliacao: 4.6,
@@ -30,7 +30,7 @@ const restaurantes: RestauranteModel[] = [
     slug: 'la_dolce_vita_trattoria'
   }),
   new RestauranteModel({
-    id: 2,
+    id: 4,
     titulo: 'La Dolce Vita Trattoria',
     tipo: 'Italiana',
     avaliacao: 4.6,
@@ -39,7 +39,7 @@ const restaurantes: RestauranteModel[] = [
     slug: 'la_dolce_vita_trattoria'
   }),
   new RestauranteModel({
-    id: 2,
+    id: 5,
     titulo: 'La Dolce Vita Trattoria',
     tipo: 'Italiana',
     avaliacao: 4.6,
@@ -48,7 +48,7 @@ const restaurantes: RestauranteModel[] = [
     slug: 'la_dolce_vita_trattoria'
   }),
   new RestauranteModel({
-    id: 2,
+    id: 6,
     titulo: 'La Dolce Vita Trattoria',
     tipo: 'Italiana',
     avaliacao: 4.6,

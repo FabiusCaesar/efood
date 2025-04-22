@@ -1,0 +1,101 @@
+import styled, { css } from 'styled-components'
+
+import fundo from '../../assets/images/fundo.png'
+import colors from '../../styles/colors'
+import {
+  headerContainerHomeResponsive,
+  headerContainerRestauranteResponsive,
+  logoResponsive,
+  LogoWrapperResponsive,
+  sloganResponsive
+} from '../../styles/mixins'
+import breakpoints from '../../styles/breakpoints'
+
+type HeaderProps = {
+  type: 'home' | 'restaurante'
+}
+
+export const HeaderContainer = styled.header<HeaderProps>`
+  width: 100%;
+  background-image: url(${fundo});
+  background-size: cover;
+
+  ${(props) =>
+    props.type === 'home'
+      ? css`
+          height: 384px;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+
+          ${headerContainerHomeResponsive}
+        `
+      : css`
+          ${headerContainerRestauranteResponsive}
+        `}
+`
+
+export const LogoWrapper = styled.div`
+  width: 100%;
+  height: 186px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  padding: 0 170px;
+  font-size: 18px;
+  font-weight: 900;
+  color: ${colors.primary};
+
+  ${LogoWrapperResponsive}
+`
+
+export const Logo = styled.img`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  ${logoResponsive}
+`
+
+export const SloganWrapper = styled.div`
+  width: 100%;
+  height: 198px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 8px;
+`
+
+export const SloganText = styled.h2`
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 120%;
+  text-align: center;
+  color: ${colors.primary};
+  max-width: 540px;
+  margin-bottom: 40px;
+
+  ${sloganResponsive}
+`
+
+export const LeftSide = styled.div`
+  z-index: 1;
+`
+
+export const RightSide = styled.div`
+  z-index: 1;
+
+  .quebra-mobile {
+    display: none;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    .quebra-mobile {
+      display: inline;
+    }
+  }
+`
