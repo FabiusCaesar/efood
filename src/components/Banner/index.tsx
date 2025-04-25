@@ -1,4 +1,4 @@
-import { Container, Nome, Tipo } from './styles'
+import { Container, Content, Nome, Tipo } from './styles'
 
 type Props = {
   imagem: string
@@ -7,9 +7,11 @@ type Props = {
 }
 
 const Banner = ({ imagem, tipo, nome }: Props) => (
-  <Container backgroundImage={imagem}>
-    <Tipo>{tipo}</Tipo>
-    <Nome>{nome}</Nome>
+  <Container $backgroundImage={imagem}>
+    <Content className="container">
+      <Tipo>{tipo}</Tipo>
+      <Nome>{nome}</Nome>
+    </Content>
   </Container>
 )
 

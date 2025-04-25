@@ -18,6 +18,10 @@ export const List = styled.ul`
   grid-template-columns: 1fr 1fr;
   gap: 80px;
 
+  > li {
+    display: flex;
+  }
+
   ${media.desktop`
     gap: 40px;
     row-gap: 40px;

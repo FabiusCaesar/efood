@@ -12,7 +12,9 @@ const RestaurantesList = ({
       <div className="container">
         <List>
           {restaurantes.map((restaurante) => (
-            <RestauranteCard key={restaurante.id} {...restaurante} />
+            <li key={restaurante.id}>
+              <RestauranteCard {...restaurante} />
+            </li>
           ))}
         </List>
       </div>

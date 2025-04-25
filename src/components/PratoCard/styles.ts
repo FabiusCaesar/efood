@@ -4,7 +4,7 @@ import colors from '../../styles/colors'
 export const Card = styled.div`
   background-color: ${colors.primary};
   padding: 8px;
-  max-width: 320px;
+  //max-width: 320px;
   height: 338px;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,6 @@ export const Card = styled.div`
 export const Img = styled.img`
   display: block;
   width: 100%;
-  max-width: 304px;
   max-height: 167px;
   object-fit: cover;
 `

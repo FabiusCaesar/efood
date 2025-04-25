@@ -17,10 +17,15 @@ export const List = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 32px;
-  justify-items: center;
+
+  > li {
+    display: flex;
+    width: 100%;
+  }
 
   ${media.desktop`
     grid-template-columns: 1fr 1fr;
+    gap: 40px
   `}
 
   ${media.mobile`

@@ -8,7 +8,9 @@ const PratosList = ({ pratos }: { pratos: PratoModel[] }) => {
       <div className="container">
         <List>
           {pratos.map((prato) => (
-            <PratoCard key={prato.id} {...prato} />
+            <li key={prato.id}>
+              <PratoCard {...prato} />
+            </li>
           ))}
         </List>
       </div>

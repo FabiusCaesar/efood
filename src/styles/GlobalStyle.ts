@@ -26,14 +26,18 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
   }
 
+  li {
+    list-style: none;
+  }
+
   .container {
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
 
     ${media.desktop`
-        width: 90%;
-      `}
+    max-width: 90%;
+  `}
   }
 `
 export default GlobalStyle

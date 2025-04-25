@@ -50,7 +50,6 @@ export const LogoWrapperResponsive = css`
   @media (max-width: ${breakpoints.desktop}) {
     height: 100px;
     min-height: 100px;
-    padding: 0 56px;
   }
 
   @media (max-width: ${breakpoints.mobile}) {
@@ -69,6 +68,17 @@ export const LogoWrapperResponsive = css`
 export const logoResponsive = css`
   @media (max-width: ${breakpoints.desktop}) {
     height: 36px;
+  }
+`
+
+// Mixins especíoficos para o SloganWrapper
+export const SloganWrapperResponsive = css`
+  @media (max-width: ${breakpoints.desktop}) {
+    height: 100px;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    height: 48px;
   }
 `
 

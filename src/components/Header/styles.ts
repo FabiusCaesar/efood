@@ -7,7 +7,8 @@ import {
   headerContainerRestauranteResponsive,
   logoResponsive,
   LogoWrapperResponsive,
-  sloganResponsive
+  sloganResponsive,
+  SloganWrapperResponsive
 } from '../../styles/mixins'
 import breakpoints from '../../styles/breakpoints'
 
@@ -35,6 +36,10 @@ export const HeaderContainer = styled.header<HeaderProps>`
         `}
 `
 
+export const Content = styled.div`
+  width: 100%;
+`
+
 export const LogoWrapper = styled.div`
   width: 100%;
   height: 186px;
@@ -42,7 +47,6 @@ export const LogoWrapper = styled.div`
   align-items: center;
   position: relative;
   justify-content: space-between;
-  padding: 0 170px;
   font-size: 18px;
   font-weight: 900;
   color: ${colors.primary};
@@ -67,7 +71,9 @@ export const SloganWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 8px;
+  padding: 0 8px; // conferir isso!
+
+  ${SloganWrapperResponsive}
 `
 
 export const SloganText = styled.h2`
