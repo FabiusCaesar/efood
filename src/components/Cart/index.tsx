@@ -28,8 +28,8 @@ const Cart = () => {
       />
       <Sidebar isVisible={isOpen}>
         <ItemsWtrapper>
-          {items.map((item) => (
-            <CartItem key={item.id}>
+          {items.map((item, index) => (
+            <CartItem key={`${item.id}-${index}`}>
               <img src={item.foto} alt={item.nome} />
               <div>
                 <h3>{item.nome}</h3>
