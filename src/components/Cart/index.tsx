@@ -35,7 +35,7 @@ const Cart = () => {
                 <h3>{item.nome}</h3>
                 <span>{formatPrice(item.preco)}</span>
               </div>
-              <button onClick={() => dispatch(removeFromCart(item.id))} />s
+              <button onClick={() => dispatch(removeFromCart(item.id))} />
             </CartItem>
           ))}
         </ItemsWtrapper>
