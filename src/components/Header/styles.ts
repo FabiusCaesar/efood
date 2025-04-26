@@ -105,3 +105,14 @@ export const RightSide = styled.div`
     }
   }
 `
+
+export const CartButton = styled.button`
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+
+  &:focus {
+    outline: 2px solid ${colors.primary};
+  }
+`

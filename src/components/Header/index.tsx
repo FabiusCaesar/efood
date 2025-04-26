@@ -1,6 +1,7 @@
 import logo from '../../assets/images/logo.png'
 import { Link } from 'react-router-dom'
 import {
+  CartButton,
   Content,
   HeaderContainer,
   LeftSide,
@@ -10,12 +11,21 @@ import {
   SloganText,
   SloganWrapper
 } from './styles'
+import { useDispatch, useSelector } from 'react-redux'
+import { openCart } from '../../store/reducers/cart'
+import { RootState } from '../../store'
 
 type Props = {
   type: 'home' | 'restaurante'
 }
 
 const Header = ({ type }: Props) => {
+  const dispatch = useDispatch()
+
+  const { items } = useSelector((state: RootState) => state.cart)
+
+  const itemQuantity = items.length === 1 ? 'produto' : 'produtos'
+
   return (
     <HeaderContainer type={type}>
       <Content className="container">
@@ -32,10 +42,13 @@ const Header = ({ type }: Props) => {
 
           {type === 'restaurante' && (
             <RightSide>
-              <span>
-                0 - produto(s)
+              <CartButton
+                onClick={() => dispatch(openCart())}
+                title="Clique aqui para abrir o carrinho"
+              >
+                {items.length} - {itemQuantity}
                 <br className="quebra-mobile" /> no carrinho
-              </span>
+              </CartButton>
             </RightSide>
           )}
         </LogoWrapper>

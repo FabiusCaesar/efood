@@ -14,4 +14,9 @@ export const ButtonContainer = styled.button<ButtonProps>`
   font-size: 14px;
   font-weight: 700;
   padding: 4px 6px;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `

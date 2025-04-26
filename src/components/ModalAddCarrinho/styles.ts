@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import colors from '../../styles/colors'
 import { media } from '../../styles/mixins'
 
+import closeIcon from '../../assets/images/close_icon.png'
+
 export const ModalContainer = styled.div`
   position: fixed;
   top: 0;
@@ -16,29 +18,59 @@ export const ModalContainer = styled.div`
   &.visible {
     display: flex;
   }
+`
 
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
+export const Overlay = styled.button`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
 `
 
 export const ModalContent = styled.div`
   background-color: ${colors.primary};
   color: ${colors.white};
-  max-width: 1024px;
   height: 344px;
   position: relative;
   z-index: 1;
 
+  display: flex;
+  gap: 24px;
+  padding: 32px;
+
+  img {
+    display: block;
+    max-width: 280px;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+
+    ${media.mobile`
+      max-width: 100%;
+      height: auto;
+    `}
+  }
+
   ${media.mobile`
       height: 95%;
+      flex-direction: column;
+      //justify-content: space-between;
     `}
 `
+export const CloseButton = styled.button`
+  background-image: url(${closeIcon});
+  background-color: transparent;
+  border: none;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+`
+
 export const ModalHeader = styled.header`
   width: 100%;
   max-height: 32px;
@@ -49,28 +81,7 @@ export const ModalHeader = styled.header`
 
 export const ModalImg = styled.div``
 
-export const ModalInnerContent = styled.div`
-  display: flex;
-  gap: 24px;
-  margin: 0 32px 32px;
-
-  ${media.mobile`
-    flex-direction: column;
-    justify-content: space-between;
-    `}
-
-  img {
-    display: block;
-    max-width: 280px;
-    height: 280px;
-    object-fit: cover;
-    object-position: center;
-
-    ${media.mobile`
-        max-width: 100%;
-      `}
-  }
-`
+export const ModalInnerContent = styled.div``
 
 export const Infos = styled.div`
   display: flex;
@@ -95,6 +106,11 @@ export const Infos = styled.div`
 
   button {
     margin-top: 16px;
+
+    ${media.mobile`
+      max-width: 100%;
+      width: 100%;
+      `}
   }
 `
 

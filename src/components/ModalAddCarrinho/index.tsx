@@ -1,15 +1,17 @@
-import closeIcon from '../../assets/images/close_icon.png'
+import { useDispatch } from 'react-redux'
 import { PratoModel } from '../../models/RestauranteModel'
 import Button from '../Button'
 import {
+  CloseButton,
   Infos,
   ModalContainer,
   ModalContent,
-  ModalHeader,
-  ModalInnerContent,
+  Overlay,
   PorcaoEButtomWrapper,
   TituloEDescricaoWrapper
 } from './styles'
+import { AppDispatch } from '../../store'
+import { addToCart } from '../../store/reducers/cart'
 
 type Props = {
   prato: PratoModel
@@ -24,37 +26,44 @@ const formataPreco = (preco = 0) => {
 }
 
 const ModalAddCarrinho = ({ prato, onClose }: Props) => {
+  const dispatch = useDispatch<AppDispatch>()
+
   return (
     <>
       <ModalContainer className="visible">
         <ModalContent className="container">
-          <ModalHeader>
-            <img src={closeIcon} alt="Botão fechar" onClick={onClose} />
-          </ModalHeader>
-          <ModalInnerContent>
-            <img src={prato.foto} alt="" />
-            <Infos>
-              <TituloEDescricaoWrapper>
-                <h3>{prato.nome}</h3>
-                <p>{prato.descricao}</p>
-              </TituloEDescricaoWrapper>
-              <PorcaoEButtomWrapper>
-                <p>
-                  {prato.porcao.includes(' a ')
-                    ? `Serve: de ${prato.porcao}`
-                    : `Serve: ${prato.porcao}`}
-                </p>
-                <Button
-                  title={`Adicionar ${prato.nome} ao carrinho por ${formataPreco(prato.preco)}`}
-                  variant="prato"
-                >
-                  Adicionar ao carrinho - {formataPreco(prato.preco)}
-                </Button>
-              </PorcaoEButtomWrapper>
-            </Infos>
-          </ModalInnerContent>
+          <CloseButton onClick={onClose} title="Clique aqui para fechar" />
+
+          <img src={prato.foto} alt="" />
+          <Infos>
+            <TituloEDescricaoWrapper>
+              <h3>{prato.nome}</h3>
+              <p>{prato.descricao}</p>
+            </TituloEDescricaoWrapper>
+            <PorcaoEButtomWrapper>
+              <p>
+                {prato.porcao.includes(' a ')
+                  ? `Serve: de ${prato.porcao}`
+                  : `Serve: ${prato.porcao}`}
+              </p>
+              <Button
+                title={`Adicionar ${prato.nome} ao carrinho por ${formataPreco(prato.preco)}`}
+                variant="prato"
+                onClick={() => {
+                  dispatch(addToCart(prato))
+                  onClose()
+                }}
+              >
+                Adicionar ao carrinho - {formataPreco(prato.preco)}
+              </Button>
+            </PorcaoEButtomWrapper>
+          </Infos>
         </ModalContent>
-        <div className="overlay" onClick={onClose}></div>
+        <Overlay
+          className="overlay"
+          onClick={onClose}
+          title="Clique aqui para voltar"
+        ></Overlay>
       </ModalContainer>
     </>
   )
