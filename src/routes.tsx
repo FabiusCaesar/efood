@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import Home from './pages/Home'
-import Restaurante from './pages/Restaurante'
+import Restaurante from './pages/Restaurant'
 
 // OBSERVAÇÃO IMPORTANTE:
 // Este projeto utilizava anteriormente um componente <ScrollToTop /> para forçar o scroll ao topo ao trocar de rota.

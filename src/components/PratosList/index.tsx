@@ -1,8 +1,8 @@
 import { Container, List } from './styles'
 import PratoCard from '../../components/PratoCard'
-import { PratoModel } from '../../models/RestauranteModel'
+import { Dish } from '../../models/Restaurant'
 
-const PratosList = ({ pratos }: { pratos: PratoModel[] }) => {
+const PratosList = ({ pratos }: { pratos: Dish[] }) => {
   return (
     <Container>
       <div className="container">

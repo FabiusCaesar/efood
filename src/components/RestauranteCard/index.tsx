@@ -13,7 +13,7 @@ import {
 } from './styles'
 
 import estrela from '../../assets/images/estrela_avaliacao.png'
-import { RestauranteModel } from '../../models/RestauranteModel'
+import { Restaurant } from '../../models/Restaurant'
 
 const RestauranteCard = ({
   id,
@@ -23,7 +23,7 @@ const RestauranteCard = ({
   avaliacao,
   descricao,
   capa
-}: RestauranteModel) => {
+}: Restaurant) => {
   return (
     <Card to={`/restaurante/${id}`}>
       <TagsWrapper>

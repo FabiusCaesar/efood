@@ -1,11 +1,11 @@
 import RestauranteCard from '../RestauranteCard'
 
-import { RestauranteModel } from '../../models/RestauranteModel'
+import { Restaurant } from '../../models/Restaurant'
 
 import { Container, List } from './styles'
 
 export type Props = {
-  restaurants: RestauranteModel[]
+  restaurants: Restaurant[]
 }
 
 const RestaurantsList = ({ restaurants }: Props) => {

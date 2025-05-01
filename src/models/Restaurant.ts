@@ -1,4 +1,5 @@
-export type PratoModel = {
+// Tipagem dos pratos do cardápio
+export type Dish = {
   id: number
   foto: string
   preco: number
@@ -7,7 +8,8 @@ export type PratoModel = {
   porcao: string
 }
 
-export type RestauranteModel = {
+// Tipagem dos restaurantes
+export type Restaurant = {
   id: number
   titulo: string
   destacado: boolean
@@ -15,5 +17,5 @@ export type RestauranteModel = {
   avaliacao: number
   descricao: string
   capa: string
-  cardapio: PratoModel[]
+  cardapio: Dish[]
 }

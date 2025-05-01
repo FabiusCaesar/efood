@@ -4,13 +4,13 @@ import Button from '../Button'
 
 import { AppDispatch } from '../../store'
 import { addToCart } from '../../store/reducers/cart'
-import { PratoModel } from '../../models/RestauranteModel'
+import { Dish } from '../../models/Restaurant'
 import { formatPrice } from '../../utils/priceUtils'
 
 import * as S from './styles'
 
 type Props = {
-  prato: PratoModel
+  prato: Dish
   onClose: () => void
 }
 

@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { PratoModel } from '../../models/RestauranteModel'
+import { Dish } from '../../models/Restaurant'
 import Button from '../Button'
 import { Card, CardContent, Descricao, Img, Titulo } from './styles'
 import ModalAddToCart from '../ModalAddToCart'
 import { AnimatePresence } from 'framer-motion'
 
-const PratoCard = ({ nome, descricao, foto, ...props }: PratoModel) => {
+const PratoCard = ({ nome, descricao, foto, ...props }: Dish) => {
   const [isModalVisible, setIsModalVisible] = useState(false)
   //const [isModalOpen, setIsModalOpen] = useState(false)
 
