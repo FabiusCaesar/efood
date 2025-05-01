@@ -62,6 +62,15 @@ export const Sidebar = styled.aside<SidebarProps>`
     max-width: 100%;
     width: 100%;
   }
+
+  p {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 32px;
+    margin-bottom: 32px;
+    color: ${colors.secondary};
+    text-align: center;
+  }
 `
 
 export const ItemsWtrapper = styled.ul`

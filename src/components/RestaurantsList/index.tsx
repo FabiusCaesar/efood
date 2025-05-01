@@ -1,17 +1,19 @@
 import RestauranteCard from '../RestauranteCard'
-import { Container, List } from './styles'
+
 import { RestauranteModel } from '../../models/RestauranteModel'
 
-const RestaurantesList = ({
-  restaurantes
-}: {
-  restaurantes: RestauranteModel[]
-}) => {
+import { Container, List } from './styles'
+
+export type Props = {
+  restaurants: RestauranteModel[]
+}
+
+const RestaurantsList = ({ restaurants }: Props) => {
   return (
     <Container>
       <div className="container">
         <List>
-          {restaurantes.map((restaurante) => (
+          {restaurants.map((restaurante) => (
             <li key={restaurante.id}>
               <RestauranteCard {...restaurante} />
             </li>
@@ -22,4 +24,4 @@ const RestaurantesList = ({
   )
 }
 
-export default RestaurantesList
+export default RestaurantsList

@@ -10,6 +10,7 @@ import {
 import Button from '../Button'
 
 import { useDispatch, useSelector } from 'react-redux'
+import { HashLink } from 'react-router-hash-link'
 import { AppDispatch, RootState } from '../../store'
 import { closeCart, removeFromCart } from '../../store/reducers/cart'
 
@@ -19,6 +20,8 @@ const Cart = () => {
   const dispatch = useDispatch<AppDispatch>()
   const { isOpen, items } = useSelector((state: RootState) => state.cart)
 
+  const isEmpty = items.length === 0
+
   return (
     <CartContainer isVisible={isOpen}>
       <Overlay
@@ -27,25 +30,37 @@ const Cart = () => {
         title="Clique aqui para fechar o carrinho"
       />
       <Sidebar isVisible={isOpen}>
-        <ItemsWtrapper>
-          {items.map((item, index) => (
-            <CartItem key={`${item.id}-${index}`}>
-              <img src={item.foto} alt={item.nome} />
-              <div>
-                <h3>{item.nome}</h3>
-                <span>{formatPrice(item.preco)}</span>
-              </div>
-              <button onClick={() => dispatch(removeFromCart(item.id))} />
-            </CartItem>
-          ))}
-        </ItemsWtrapper>
-        <TotalWrapper>
-          <span>Valor total</span>
-          <span>{formatPrice(getTotalPrice(items))}</span>
-        </TotalWrapper>
-        <Button variant="prato" disabled={items.length === 0}>
-          Continuar com a entrega
-        </Button>
+        {isEmpty ? (
+          <>
+            <p>O carrinho está vazio.</p>
+            <p>Que tal adicionar um prato e matar essa fome?</p>
+            <HashLink to="/#restaurants-list">
+              <Button variant="prato" onClick={() => dispatch(closeCart())}>
+                Ver restaurantes
+              </Button>
+            </HashLink>
+          </>
+        ) : (
+          <>
+            <ItemsWtrapper>
+              {items.map((item, index) => (
+                <CartItem key={`${item.id}-${index}`}>
+                  <img src={item.foto} alt={item.nome} />
+                  <div>
+                    <h3>{item.nome}</h3>
+                    <span>{formatPrice(item.preco)}</span>
+                  </div>
+                  <button onClick={() => dispatch(removeFromCart(item.id))} />
+                </CartItem>
+              ))}
+            </ItemsWtrapper>
+            <TotalWrapper>
+              <span>Valor total</span>
+              <span>{formatPrice(getTotalPrice(items))}</span>
+            </TotalWrapper>
+            <Button variant="prato">Continuar com a entrega</Button>
+          </>
+        )}
       </Sidebar>
     </CartContainer>
   )

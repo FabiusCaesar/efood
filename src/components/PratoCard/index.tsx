@@ -2,10 +2,12 @@ import { useState } from 'react'
 import { PratoModel } from '../../models/RestauranteModel'
 import Button from '../Button'
 import { Card, CardContent, Descricao, Img, Titulo } from './styles'
-import ModalAddCarrinho from '../ModalAddCarrinho'
+import ModalAddToCart from '../ModalAddToCart'
+import { AnimatePresence } from 'framer-motion'
 
 const PratoCard = ({ nome, descricao, foto, ...props }: PratoModel) => {
   const [isModalVisible, setIsModalVisible] = useState(false)
+  //const [isModalOpen, setIsModalOpen] = useState(false)
 
   const abrirModal = () => {
     setIsModalVisible(true)
@@ -39,12 +41,15 @@ const PratoCard = ({ nome, descricao, foto, ...props }: PratoModel) => {
         </CardContent>
       </Card>
 
-      {isModalVisible && (
-        <ModalAddCarrinho
-          prato={{ nome, descricao, foto, ...props }}
-          onClose={fecharModal}
-        />
-      )}
+      <AnimatePresence>
+        {isModalVisible && (
+          <ModalAddToCart
+            key="cart-modal"
+            prato={{ nome, descricao, foto, ...props }}
+            onClose={fecharModal}
+          />
+        )}
+      </AnimatePresence>
     </>
   )
 }

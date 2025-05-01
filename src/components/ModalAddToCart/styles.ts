@@ -1,23 +1,22 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
+
 import colors from '../../styles/colors'
 import { media } from '../../styles/mixins'
 
 import closeIcon from '../../assets/images/close_icon.png'
 
-export const ModalContainer = styled.div`
+export const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  display: none;
+
+  display: flex;
   align-items: center;
   justify-content: center;
-
-  &.visible {
-    display: flex;
-  }
 `
 
 export const Overlay = styled.button`
@@ -30,7 +29,7 @@ export const Overlay = styled.button`
   border: none;
 `
 
-export const ModalContent = styled.div`
+export const MotionContent = styled(motion.div)`
   background-color: ${colors.primary};
   color: ${colors.white};
   height: 344px;
@@ -57,7 +56,6 @@ export const ModalContent = styled.div`
   ${media.mobile`
       height: 95%;
       flex-direction: column;
-      //justify-content: space-between;
     `}
 `
 export const CloseButton = styled.button`
@@ -71,7 +69,7 @@ export const CloseButton = styled.button`
   right: 8px;
 `
 
-export const ModalHeader = styled.header`
+export const Header = styled.header`
   width: 100%;
   max-height: 32px;
   padding: 8px;
@@ -83,7 +81,7 @@ export const ModalImg = styled.div``
 
 export const ModalInnerContent = styled.div``
 
-export const Infos = styled.div`
+export const Info = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -114,6 +112,6 @@ export const Infos = styled.div`
   }
 `
 
-export const TituloEDescricaoWrapper = styled.div``
+export const TitleAndDescriptionWrapper = styled.div``
 
-export const PorcaoEButtomWrapper = styled.div``
+export const PortionAndButtonWrapper = styled.div``
