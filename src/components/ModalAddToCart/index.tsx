@@ -8,6 +8,10 @@ import { Dish } from '../../models/Restaurant'
 import { formatPrice } from '../../utils/priceUtils'
 
 import * as S from './styles'
+import Overlay from '../Overlay'
+import { useEffect } from 'react'
+import { setOverlayContext } from '../../store/reducers/overlay'
+import { goToCart } from '../../store/reducers/ui'
 
 type Props = {
   prato: Dish
@@ -17,9 +21,14 @@ type Props = {
 const ModalAddToCart = ({ prato, onClose }: Props) => {
   const dispatch = useDispatch<AppDispatch>()
 
+  useEffect(() => {
+    dispatch(setOverlayContext('modal'))
+  }, [dispatch])
+
   return (
     <>
       <S.Container>
+        <Overlay />
         <S.MotionContent
           className="container"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -31,34 +40,29 @@ const ModalAddToCart = ({ prato, onClose }: Props) => {
 
           <img src={prato.foto} alt="" />
           <S.Info>
-            <S.TitleAndDescriptionWrapper>
-              <h3>{prato.nome}</h3>
-              <p>{prato.descricao}</p>
-            </S.TitleAndDescriptionWrapper>
-            <S.PortionAndButtonWrapper>
-              <p>
-                {prato.porcao.includes(' a ')
-                  ? `Serve: de ${prato.porcao}`
-                  : `Serve: ${prato.porcao}`}
-              </p>
-              <Button
-                title={`Adicionar ${prato.nome} ao carrinho por ${formatPrice(prato.preco)}`}
-                variant="prato"
-                onClick={() => {
-                  dispatch(addToCart(prato))
-                  onClose()
-                }}
-              >
-                Adicionar ao carrinho - {formatPrice(prato.preco)}
-              </Button>
-            </S.PortionAndButtonWrapper>
+            <h3>{prato.nome}</h3>
+
+            <p>{prato.descricao}</p>
+
+            <p>
+              {prato.porcao.includes(' a ')
+                ? `Serve: de ${prato.porcao}`
+                : `Serve: ${prato.porcao}`}
+            </p>
+
+            <Button
+              title={`Adicionar ${prato.nome} ao carrinho por ${formatPrice(prato.preco)}`}
+              variant="prato"
+              onClick={() => {
+                dispatch(addToCart(prato))
+                dispatch(goToCart())
+                onClose()
+              }}
+            >
+              Adicionar ao carrinho - {formatPrice(prato.preco)}
+            </Button>
           </S.Info>
         </S.MotionContent>
-        <S.Overlay
-          className="overlay"
-          onClick={onClose}
-          title="Clique aqui para voltar"
-        ></S.Overlay>
       </S.Container>
     </>
   )

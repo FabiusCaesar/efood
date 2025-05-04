@@ -4,17 +4,23 @@ import Button from '../Button'
 import { Card, CardContent, Descricao, Img, Titulo } from './styles'
 import ModalAddToCart from '../ModalAddToCart'
 import { AnimatePresence } from 'framer-motion'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '../../store'
+import { closeModal, openModal } from '../../store/reducers/modal'
 
 const PratoCard = ({ nome, descricao, foto, ...props }: Dish) => {
-  const [isModalVisible, setIsModalVisible] = useState(false)
-  //const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedDish, setSelectedDish] = useState<Dish | null>(null)
+  const dispatch = useDispatch()
+  const isModalVisible = useSelector((state: RootState) => state.modal.isOpen)
 
   const abrirModal = () => {
-    setIsModalVisible(true)
+    setSelectedDish({ nome, descricao, foto, ...props })
+    dispatch(openModal())
   }
 
   const fecharModal = () => {
-    setIsModalVisible(false)
+    setSelectedDish(null)
+    dispatch(closeModal())
   }
 
   const getDescricao = (descricao: string) => {
@@ -41,11 +47,12 @@ const PratoCard = ({ nome, descricao, foto, ...props }: Dish) => {
         </CardContent>
       </Card>
 
+      {/* Modal com Overlay */}
       <AnimatePresence>
-        {isModalVisible && (
+        {isModalVisible && selectedDish && (
           <ModalAddToCart
             key="cart-modal"
-            prato={{ nome, descricao, foto, ...props }}
+            prato={selectedDish}
             onClose={fecharModal}
           />
         )}

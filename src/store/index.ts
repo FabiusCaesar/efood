@@ -1,10 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit'
 
+import overlayReducer from './reducers/overlay'
 import cartReducer from './reducers/cart'
+import uiReducer from './reducers/ui'
+import modalReducer from './reducers/modal'
 
 export const store = configureStore({
   reducer: {
-    cart: cartReducer
+    overlay: overlayReducer,
+    cart: cartReducer,
+    ui: uiReducer,
+    modal: modalReducer
   }
 })
 

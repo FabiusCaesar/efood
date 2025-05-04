@@ -12,7 +12,7 @@ import {
   SloganWrapper
 } from './styles'
 import { useDispatch, useSelector } from 'react-redux'
-import { openCart } from '../../store/reducers/cart'
+import { goToCart } from '../../store/reducers/ui'
 import { RootState } from '../../store'
 
 type Props = {
@@ -43,7 +43,7 @@ const Header = ({ type }: Props) => {
           {type === 'restaurante' && (
             <RightSide>
               <CartButton
-                onClick={() => dispatch(openCart())}
+                onClick={() => dispatch(goToCart())}
                 title="Clique aqui para abrir o carrinho"
               >
                 {items.length} - {itemQuantity}

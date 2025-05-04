@@ -8,6 +8,7 @@ type Props = {
   onClick?: () => void
   disabled?: boolean
   variant?: 'default' | 'prato'
+  type?: 'button' | 'submit' | 'reset'
 }
 
 const Button = ({
@@ -15,13 +16,15 @@ const Button = ({
   title,
   onClick,
   disabled,
-  variant = 'default'
+  variant = 'default',
+  type = 'button'
 }: Props) => (
   <ButtonContainer
     title={title}
     onClick={onClick}
     disabled={disabled}
     variant={variant}
+    type={type}
   >
     {children}
   </ButtonContainer>

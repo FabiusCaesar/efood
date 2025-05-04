@@ -12,21 +12,11 @@ export const Container = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 10;
 
   display: flex;
   align-items: center;
   justify-content: center;
-`
-
-export const Overlay = styled.button`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  border: none;
 `
 
 export const MotionContent = styled(motion.div)`
@@ -34,7 +24,7 @@ export const MotionContent = styled(motion.div)`
   color: ${colors.white};
   height: 344px;
   position: relative;
-  z-index: 1;
+  z-index: 20;
 
   display: flex;
   gap: 24px;
@@ -77,19 +67,18 @@ export const Header = styled.header`
   justify-content: flex-end;
 `
 
-export const ModalImg = styled.div``
-
-export const ModalInnerContent = styled.div``
-
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   h3 {
     font-size: 18px;
     font-weight: 900;
     margin-bottom: 16px;
+  }
+
+  p + p {
+    margin-top: 24px;
   }
 
   p {
@@ -103,6 +92,7 @@ export const Info = styled.div`
   }
 
   button {
+    width: fit-content;
     margin-top: 16px;
 
     ${media.mobile`
@@ -111,7 +101,3 @@ export const Info = styled.div`
       `}
   }
 `
-
-export const TitleAndDescriptionWrapper = styled.div``
-
-export const PortionAndButtonWrapper = styled.div``

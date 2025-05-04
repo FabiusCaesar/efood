@@ -1,7 +1,9 @@
+import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import Home from './pages/Home'
 import Restaurante from './pages/Restaurant'
+import Controller from './components/Checkout/Controller'
 
 // OBSERVAÇÃO IMPORTANTE:
 // Este projeto utilizava anteriormente um componente <ScrollToTop /> para forçar o scroll ao topo ao trocar de rota.
@@ -12,8 +14,7 @@ import Restaurante from './pages/Restaurant'
 // considere reativar o componente ou investigar o uso de HashLink, navegação imperativa ou efeitos que alterem o scroll.
 
 //import ScrollToTop from './components/ScrollToTop'
-import Cart from './components/Cart'
-import { Provider } from 'react-redux'
+
 import { store } from './store'
 
 const AppRoutes = () => (
@@ -27,7 +28,7 @@ const AppRoutes = () => (
         {/* Rota do Restaurante */}
         <Route path="/restaurante/:id" element={<Restaurante />} />
       </Routes>
-      <Cart />
+      <Controller />
     </BrowserRouter>
   </Provider>
 )
