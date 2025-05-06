@@ -1,7 +1,6 @@
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import Home from './pages/Home'
 import Restaurante from './pages/Restaurant'
 import SidebarController from './containers/SidebarController'
 
@@ -18,6 +17,7 @@ import SidebarController from './containers/SidebarController'
 import { store } from './store'
 import Overlay from './components/Overlay'
 import GlobalStyle from './styles/GlobalStyle'
+import HomeController from './containers/HomeController'
 
 const AppRoutes = () => (
   <Provider store={store}>
@@ -26,7 +26,7 @@ const AppRoutes = () => (
       {/*<ScrollToTop />*/}
       <Routes>
         {/* Rota da Home */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomeController />} />
 
         {/* Rota do Restaurante */}
         <Route path="/restaurante/:id" element={<Restaurante />} />

@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react'
-
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 
@@ -7,19 +5,12 @@ import RestaurantsList from '../../components/RestaurantsList'
 import { Restaurant } from '../../models/Restaurant'
 import Loader from '../../components/Loader'
 
-const Home = () => {
-  const [restaurants, setRestaurants] = useState<Restaurant[]>([])
-  const [isLoading, setIsLoading] = useState(true)
+type Props = {
+  restaurants: Restaurant[]
+  isLoading: boolean
+}
 
-  useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
-      .then((res) => res.json())
-      .then((res) => {
-        setRestaurants(res)
-        setIsLoading(false)
-      })
-  }, [])
-
+const Home = ({ isLoading, restaurants }: Props) => {
   return (
     <>
       <Header type="home" />
