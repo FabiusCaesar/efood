@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import Home from './pages/Home'
 import Restaurante from './pages/Restaurant'
-import Controller from './components/Checkout/Controller'
+import SidebarController from './containers/SidebarController'
 
 // OBSERVAÇÃO IMPORTANTE:
 // Este projeto utilizava anteriormente um componente <ScrollToTop /> para forçar o scroll ao topo ao trocar de rota.
@@ -16,10 +16,13 @@ import Controller from './components/Checkout/Controller'
 //import ScrollToTop from './components/ScrollToTop'
 
 import { store } from './store'
+import Overlay from './components/Overlay'
+import GlobalStyle from './styles/GlobalStyle'
 
 const AppRoutes = () => (
   <Provider store={store}>
     <BrowserRouter>
+      <GlobalStyle />
       {/*<ScrollToTop />*/}
       <Routes>
         {/* Rota da Home */}
@@ -28,7 +31,12 @@ const AppRoutes = () => (
         {/* Rota do Restaurante */}
         <Route path="/restaurante/:id" element={<Restaurante />} />
       </Routes>
-      <Controller />
+
+      {/* Overlay global controlado por Redux */}
+      <Overlay />
+
+      {/* Sidebar (Cart, Checkout...) */}
+      <SidebarController />
     </BrowserRouter>
   </Provider>
 )

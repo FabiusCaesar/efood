@@ -4,13 +4,15 @@ import overlayReducer from './reducers/overlay'
 import cartReducer from './reducers/cart'
 import uiReducer from './reducers/ui'
 import modalReducer from './reducers/modal'
+import restaurantReducer from './reducers/restaurant'
 
 export const store = configureStore({
   reducer: {
     overlay: overlayReducer,
     cart: cartReducer,
     ui: uiReducer,
-    modal: modalReducer
+    modal: modalReducer,
+    restaurant: restaurantReducer
   }
 })
 

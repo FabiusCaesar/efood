@@ -16,7 +16,7 @@ import { goToCart } from '../../store/reducers/ui'
 import { RootState } from '../../store'
 
 type Props = {
-  type: 'home' | 'restaurante'
+  type: 'home' | 'restaurant'
 }
 
 const Header = ({ type }: Props) => {
@@ -30,7 +30,7 @@ const Header = ({ type }: Props) => {
     <HeaderContainer type={type}>
       <Content className="container">
         <LogoWrapper>
-          {type === 'restaurante' && (
+          {type === 'restaurant' && (
             <LeftSide>
               <h3>Restaurantes</h3>
             </LeftSide>
@@ -40,7 +40,7 @@ const Header = ({ type }: Props) => {
             <Logo src={logo} alt="Logo EFOOD" />
           </Link>
 
-          {type === 'restaurante' && (
+          {type === 'restaurant' && (
             <RightSide>
               <CartButton
                 onClick={() => dispatch(goToCart())}

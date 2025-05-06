@@ -55,14 +55,14 @@ const PaymentForm = () => {
 
         <S.ButtonGroup>
           <Button
-            variant="prato"
+            variant="dish"
             title="Clique aqui para finalizar o pagamento"
             onClick={() => dispatch(goToSuccess())}
           >
             Finalizar pagamento
           </Button>
           <Button
-            variant="prato"
+            variant="dish"
             title="Clique aqui para voltar para os dados de entrega"
             onClick={() => dispatch(goToDelivery())}
           >

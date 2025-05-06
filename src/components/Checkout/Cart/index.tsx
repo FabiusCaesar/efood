@@ -12,7 +12,10 @@ import { formatPrice, getTotalPrice } from '../../../utils/priceUtils'
 
 import * as S from './styles'
 import { useEffect } from 'react'
-import { setOverlayContext } from '../../../store/reducers/overlay'
+import {
+  clearOverlay,
+  setOverlayContext
+} from '../../../store/reducers/overlay'
 
 const Cart = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -22,6 +25,10 @@ const Cart = () => {
 
   useEffect(() => {
     dispatch(setOverlayContext('checkout'))
+
+    return () => {
+      dispatch(clearOverlay())
+    }
   }, [dispatch])
 
   return (
@@ -31,7 +38,7 @@ const Cart = () => {
           <h4>O carrinho está vazio.</h4>
           <h4>Que tal adicionar um prato e matar essa fome?</h4>
           <HashLink to="/#restaurants-list">
-            <Button variant="prato" onClick={() => dispatch(closeSidebar())}>
+            <Button variant="dish" onClick={() => dispatch(closeSidebar())}>
               Ver restaurantes
             </Button>
           </HashLink>
@@ -55,7 +62,7 @@ const Cart = () => {
             <span>{formatPrice(getTotalPrice(items))}</span>
           </S.TotalWrapper>
           <Button
-            variant="prato"
+            variant="dish"
             title="Clique para ir para o formulário de entrega"
             onClick={() => dispatch(goToDelivery())}
           >

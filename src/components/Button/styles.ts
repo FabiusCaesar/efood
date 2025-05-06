@@ -2,14 +2,14 @@ import styled from 'styled-components'
 import colors from '../../styles/colors'
 
 type ButtonProps = {
-  variant?: 'default' | 'prato'
+  variant?: 'default' | 'dish'
 }
 
 export const ButtonContainer = styled.button<ButtonProps>`
   background-color: ${(props) =>
-    props.variant === 'prato' ? colors.secondary : colors.primary};
+    props.variant === 'dish' ? colors.secondary : colors.primary};
   color: ${(props) =>
-    props.variant === 'prato' ? colors.primary : colors.secondary};
+    props.variant === 'dish' ? colors.primary : colors.secondary};
   border: none;
   font-size: 14px;
   font-weight: 700;

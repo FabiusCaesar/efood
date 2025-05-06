@@ -35,7 +35,7 @@ const SuccessMessage = () => {
       </p>
 
       <ButtonGroup>
-        <Button variant="prato" title="Clique aqui para concluir">
+        <Button variant="dish" title="Clique aqui para concluir">
           Concluir
         </Button>
       </ButtonGroup>

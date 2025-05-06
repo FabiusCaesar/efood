@@ -53,7 +53,7 @@ const DeliveryForm = () => {
         <S.ButtonGroup>
           <Button
             type="button"
-            variant="prato"
+            variant="dish"
             title="Clique aqui para seguir para o pagamento"
             onClick={() => dispatch(goToPayment())}
           >
@@ -61,7 +61,7 @@ const DeliveryForm = () => {
           </Button>
           <Button
             type="button"
-            variant="prato"
+            variant="dish"
             title="Clique aqui para voltar ao carrinho"
             onClick={() => dispatch(goToCart())}
           >

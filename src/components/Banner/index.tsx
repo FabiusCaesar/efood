@@ -1,16 +1,16 @@
-import { Container, Content, Nome, Tipo } from './styles'
+import { Container, Content, Name, Category } from './styles'
 
 type Props = {
-  imagem: string
-  tipo: string
-  nome: string
+  image: string
+  category: string
+  title: string
 }
 
-const Banner = ({ imagem, tipo, nome }: Props) => (
-  <Container $backgroundImage={imagem}>
+const Banner = ({ image, category, title }: Props) => (
+  <Container $backgroundImage={image}>
     <Content className="container">
-      <Tipo>{tipo}</Tipo>
-      <Nome>{nome}</Nome>
+      <Category>{category}</Category>
+      <Name>{title}</Name>
     </Content>
   </Container>
 )

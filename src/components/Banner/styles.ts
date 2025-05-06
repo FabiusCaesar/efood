@@ -48,7 +48,7 @@ export const Content = styled.div`
   color: ${colors.primary};
 `
 
-export const Tipo = styled.h3`
+export const Category = styled.h3`
   font-size: 32px;
   font-weight: 100;
   color: ${colors.white};
@@ -63,7 +63,7 @@ export const Tipo = styled.h3`
   `}
 `
 
-export const Nome = styled.h2`
+export const Name = styled.h2`
   font-size: 32px;
   font-weight: 900;
   color: ${colors.white};

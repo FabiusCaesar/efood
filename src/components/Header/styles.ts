@@ -13,7 +13,7 @@ import {
 import breakpoints from '../../styles/breakpoints'
 
 type HeaderProps = {
-  type: 'home' | 'restaurante'
+  type: 'home' | 'restaurant'
 }
 
 export const HeaderContainer = styled.header<HeaderProps>`

@@ -10,14 +10,14 @@ export const Card = styled.div`
   flex-direction: column;
 `
 
-export const Img = styled.img`
+export const Image = styled.img`
   display: block;
   width: 100%;
   max-height: 167px;
   object-fit: cover;
 `
 
-export const Titulo = styled.h3`
+export const Title = styled.h3`
   font-size: 16px;
   font-weight: 900;
   color: ${colors.secondary};
@@ -31,7 +31,7 @@ export const CardContent = styled.div`
   justify-content: space-between;
 `
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
   color: ${colors.secondary};

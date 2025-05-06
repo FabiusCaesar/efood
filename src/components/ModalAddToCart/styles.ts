@@ -8,11 +8,13 @@ import closeIcon from '../../assets/images/close_icon.png'
 
 export const Container = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
+  //top: 0;
+  //left: 0;
+  inset: 0; // substitui top/left/right/bottom
+  //width: 100%;
+  //height: 100%;
+  z-index: 30;
+  pointer-events: none; // desativa clique no espaço ao redor
 
   display: flex;
   align-items: center;
@@ -24,11 +26,12 @@ export const MotionContent = styled(motion.div)`
   color: ${colors.white};
   height: 344px;
   position: relative;
-  z-index: 20;
+  z-index: 30;
 
   display: flex;
   gap: 24px;
   padding: 32px;
+  pointer-events: auto; // reativa cliques apenas aqui
 
   img {
     display: block;
