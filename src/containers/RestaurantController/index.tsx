@@ -7,16 +7,10 @@ import {
   openModal,
   setSelectedDish
 } from '../../store/reducers/modal'
-import ModalAddToCart from '../../components/ModalAddToCart'
 import { Dish } from '../../models/Restaurant'
-import Header from '../../components/Header'
-import Banner from '../../components/Banner'
-import DishList from '../../components/DishList'
-import Footer from '../../components/Footer'
-import Loader from '../../components/Loader'
 import { fetchRestaurant } from '../../store/reducers/restaurant'
-import { AnimatePresence } from 'framer-motion'
 import { setOverlayContext } from '../../store/reducers/overlay'
+import RestaurantPage from '../../pages/Restaurant'
 
 const RestaurantController = () => {
   const { id } = useParams()
@@ -46,36 +40,14 @@ const RestaurantController = () => {
   }
 
   return (
-    <>
-      <Header type="restaurant" />
-
-      {isLoading || !restaurant ? (
-        <Loader />
-      ) : (
-        <>
-          <Banner
-            category={restaurant.tipo}
-            title={restaurant.titulo}
-            image={restaurant.capa}
-          />
-
-          <div className="container">
-            <DishList
-              dishes={restaurant.cardapio}
-              onDishClick={handleDishClick}
-            />
-          </div>
-
-          <AnimatePresence>
-            {isModalOpen && selectedDish && (
-              <ModalAddToCart dish={selectedDish} onClose={handleCloseModal} />
-            )}
-          </AnimatePresence>
-
-          <Footer />
-        </>
-      )}
-    </>
+    <RestaurantPage
+      restaurant={restaurant}
+      isLoading={isLoading}
+      isModalOpen={isModalOpen}
+      selectedDish={selectedDish}
+      onDishClick={handleDishClick}
+      onCloseModal={handleCloseModal}
+    />
   )
 }
 

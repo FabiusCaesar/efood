@@ -1,7 +1,6 @@
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import Restaurante from './pages/Restaurant'
 import SidebarController from './containers/SidebarController'
 
 // OBSERVAÇÃO IMPORTANTE:
@@ -18,6 +17,7 @@ import { store } from './store'
 import Overlay from './components/Overlay'
 import GlobalStyle from './styles/GlobalStyle'
 import HomeController from './containers/HomeController'
+import RestaurantController from './containers/RestaurantController'
 
 const AppRoutes = () => (
   <Provider store={store}>
@@ -29,7 +29,7 @@ const AppRoutes = () => (
         <Route path="/" element={<HomeController />} />
 
         {/* Rota do Restaurante */}
-        <Route path="/restaurante/:id" element={<Restaurante />} />
+        <Route path="/restaurante/:id" element={<RestaurantController />} />
       </Routes>
 
       {/* Overlay global controlado por Redux */}
