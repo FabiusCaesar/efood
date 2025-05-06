@@ -1,24 +1,13 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from '../../store'
-import { clearOverlay } from '../../store/reducers/overlay'
-import { closeSidebar } from '../../store/reducers/ui'
 import { OverlayContainer } from './styles'
-import { requestCloseModal } from '../../store/reducers/modal'
 import { AnimatePresence, motion } from 'framer-motion'
 
-const Overlay = () => {
-  const dispatch = useDispatch()
-  const { active, context } = useSelector((state: RootState) => state.overlay)
+type Props = {
+  active: boolean
+  context: 'modal' | 'checkout' | null
+  onClick: () => void
+}
 
-  const handleClick = () => {
-    if (context === 'modal') {
-      dispatch(requestCloseModal())
-    } else if (context === 'checkout') {
-      dispatch(closeSidebar())
-      dispatch(clearOverlay())
-    }
-  }
-
+const Overlay = ({ active, context, onClick }: Props) => {
   return (
     <AnimatePresence>
       {active && (
@@ -29,7 +18,7 @@ const Overlay = () => {
           animate={{ opacity: 0.6 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          onClick={handleClick}
+          onClick={onClick}
         />
       )}
     </AnimatePresence>

@@ -14,10 +14,10 @@ import SidebarController from './containers/SidebarController'
 //import ScrollToTop from './components/ScrollToTop'
 
 import { store } from './store'
-import Overlay from './components/Overlay'
 import GlobalStyle from './styles/GlobalStyle'
 import HomeController from './containers/HomeController'
 import RestaurantController from './containers/RestaurantController'
+import OverlayController from './containers/OverlayController'
 
 const AppRoutes = () => (
   <Provider store={store}>
@@ -33,7 +33,7 @@ const AppRoutes = () => (
       </Routes>
 
       {/* Overlay global controlado por Redux */}
-      <Overlay />
+      <OverlayController />
 
       {/* Sidebar (Cart, Checkout...) */}
       <SidebarController />
