@@ -30,7 +30,7 @@ const SuccessMessage = () => {
 
   return (
     <AnimatedSidebarContainer>
-      <h3>Pedido realizado - Nº {orderId}</h3>
+      <h3>Pedido realizado - {orderId}</h3>
 
       <p>
         Estamos felizes em informar que seu pedido já está em processo de
