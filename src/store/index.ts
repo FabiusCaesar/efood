@@ -5,6 +5,7 @@ import cartReducer from './reducers/cart'
 import uiReducer from './reducers/ui'
 import modalReducer from './reducers/modal'
 import restaurantReducer from './reducers/restaurant'
+import checkoutReducer from './reducers/checkout'
 
 export const store = configureStore({
   reducer: {
@@ -12,7 +13,8 @@ export const store = configureStore({
     cart: cartReducer,
     ui: uiReducer,
     modal: modalReducer,
-    restaurant: restaurantReducer
+    restaurant: restaurantReducer,
+    checkout: checkoutReducer
   }
 })
 

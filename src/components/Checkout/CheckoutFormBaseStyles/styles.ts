@@ -58,3 +58,10 @@ export const ButtonGroup = styled.div`
   gap: 8px;
   margin-top: 24px;
 `
+
+export const ErrorMessage = styled.span`
+  font-size: 12px;
+  color: ${colors.text};
+  //text-align: right;
+  margin: 2px 8px 0;
+`

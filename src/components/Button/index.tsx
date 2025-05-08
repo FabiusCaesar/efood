@@ -23,7 +23,7 @@ const Button = ({
     title={title}
     onClick={onClick}
     disabled={disabled}
-    variant={variant}
+    $variant={variant}
     type={type}
   >
     {children}

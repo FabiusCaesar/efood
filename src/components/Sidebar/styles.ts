@@ -17,7 +17,7 @@ export const SidebarContainer = styled(motion.aside)`
   color: ${colors.secondary};
 
   ${media.mobile`
-    max-width: 75%
+    max-width: 80%
     `}
 
   ${ButtonContainer} {

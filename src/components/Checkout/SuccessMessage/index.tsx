@@ -1,21 +1,36 @@
 import Button from '../../Button'
 import AnimatedSidebarContainer from '../../Sidebar'
-import { setOverlayContext } from '../../../store/reducers/overlay'
-import { AppDispatch } from '../../../store'
-import { useDispatch } from 'react-redux'
+import {
+  clearOverlay,
+  setOverlayContext
+} from '../../../store/reducers/overlay'
+import { AppDispatch, RootState } from '../../../store'
+import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { ButtonGroup } from '../CheckoutFormBaseStyles/styles'
+import { useNavigate } from 'react-router-dom'
+import { clearCart } from '../../../store/reducers/cart'
+import { closeSidebar } from '../../../store/reducers/ui'
 
 const SuccessMessage = () => {
   const dispatch = useDispatch<AppDispatch>()
+  const orderId = useSelector((state: RootState) => state.checkout.orderId)
+  const navigate = useNavigate()
 
   useEffect(() => {
     dispatch(setOverlayContext('checkout'))
   }, [dispatch])
 
+  const handleConclude = () => {
+    dispatch(closeSidebar())
+    dispatch(clearOverlay())
+    dispatch(clearCart())
+    navigate('/')
+  }
+
   return (
     <AnimatedSidebarContainer>
-      <h3>Pedido realizado -</h3>
+      <h3>Pedido realizado - Nº {orderId}</h3>
 
       <p>
         Estamos felizes em informar que seu pedido já está em processo de
@@ -35,7 +50,11 @@ const SuccessMessage = () => {
       </p>
 
       <ButtonGroup>
-        <Button variant="dish" title="Clique aqui para concluir">
+        <Button
+          variant="dish"
+          title="Clique aqui para concluir"
+          onClick={handleConclude}
+        >
           Concluir
         </Button>
       </ButtonGroup>
