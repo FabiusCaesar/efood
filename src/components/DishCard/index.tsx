@@ -22,7 +22,7 @@ const DishCard = ({ nome, descricao, foto, onClick, ...props }: Props) => {
         <Description>{getDescription(descricao)}</Description>
         <Button
           title={`Adicionar ${nome} ao carrinho`}
-          variant="dish"
+          variant="secondary"
           onClick={() => onClick({ nome, descricao, foto, ...props })}
         >
           Adicionar ao carrinho

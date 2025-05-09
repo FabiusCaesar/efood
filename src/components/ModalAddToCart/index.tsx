@@ -79,7 +79,7 @@ const ModalAddToCart = ({ dish, onClose }: Props) => {
 
                 <Button
                   title={`Adicionar ${dish.nome} ao carrinho por ${formatPrice(dish.preco)}`}
-                  variant="dish"
+                  variant="secondary"
                   onClick={() => {
                     dispatch(addToCart(dish))
                     dispatch(goToCart())

@@ -148,7 +148,7 @@ const PaymentForm = () => {
         <S.ButtonGroup>
           <Button
             type="submit"
-            variant="dish"
+            variant="secondary"
             title="Clique aqui para finalizar o pagamento"
             disabled={isSubmitting}
           >
@@ -160,7 +160,7 @@ const PaymentForm = () => {
           </Button>
           <Button
             type="button"
-            variant="dish"
+            variant="secondary"
             title="Clique aqui para voltar para os dados de entrega"
             onClick={() => dispatch(goToDelivery())}
           >

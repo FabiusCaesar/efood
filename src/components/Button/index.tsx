@@ -7,7 +7,7 @@ type Props = {
   title?: string
   onClick?: () => void
   disabled?: boolean
-  variant?: 'default' | 'dish'
+  variant?: 'default' | 'secondary'
   type?: 'button' | 'submit' | 'reset'
 }
 

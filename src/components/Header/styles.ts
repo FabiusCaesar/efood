@@ -61,6 +61,14 @@ export const Logo = styled.img`
   top: 50%;
   transform: translate(-50%, -50%);
 
+  transition:
+    transform 0.2s ease-in-out,
+    filter 0.2s ease-in-out;
+
+  &:hover {
+    transform: translate(-50%, -50%) rotate(4deg) scale(1.05);
+  }
+
   ${logoResponsive}
 `
 
@@ -111,8 +119,14 @@ export const CartButton = styled.button`
   border: none;
   color: inherit;
   font: inherit;
+  transition: all 0.2s ease-in-out;
 
   &:focus {
     outline: 2px solid ${colors.primary};
+  }
+
+  &:hover {
+    transform: rotate(4deg);
+    filter: brightness(1.2);
   }
 `

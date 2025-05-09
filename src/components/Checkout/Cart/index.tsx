@@ -38,7 +38,10 @@ const Cart = () => {
           <h4>O carrinho está vazio.</h4>
           <h4>Que tal adicionar um prato e matar essa fome?</h4>
           <HashLink to="/#restaurants-list">
-            <Button variant="dish" onClick={() => dispatch(closeSidebar())}>
+            <Button
+              variant="secondary"
+              onClick={() => dispatch(closeSidebar())}
+            >
               Ver restaurantes
             </Button>
           </HashLink>
@@ -62,7 +65,7 @@ const Cart = () => {
             <span>{formatPrice(getTotalPrice(items))}</span>
           </S.TotalWrapper>
           <Button
-            variant="dish"
+            variant="secondary"
             title="Clique para ir para o formulário de entrega"
             onClick={() => dispatch(goToDelivery())}
           >

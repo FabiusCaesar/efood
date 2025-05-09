@@ -28,6 +28,12 @@ export const Logo = styled.img`
   margin-top: 64px;
   margin-bottom: 32px;
 
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: rotate(4deg) scale(1.05);
+  }
+
   ${logoFooterResponsive}
 `
 

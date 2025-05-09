@@ -10,6 +10,13 @@ export const Card = styled(Link)`
   position: relative;
   display: flex;
   flex-direction: column;
+
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
 `
 
 export const TagsWrapper = styled.div`

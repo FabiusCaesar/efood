@@ -51,7 +51,7 @@ const SuccessMessage = () => {
 
       <ButtonGroup>
         <Button
-          variant="dish"
+          variant="secondary"
           title="Clique aqui para concluir"
           onClick={handleConclude}
         >

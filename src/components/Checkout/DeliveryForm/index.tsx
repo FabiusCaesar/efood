@@ -122,14 +122,14 @@ const DeliveryForm = () => {
         <S.ButtonGroup>
           <Button
             type="submit"
-            variant="dish"
+            variant="secondary"
             title="Clique aqui para seguir para o pagamento"
           >
             Continuar com o pagamento
           </Button>
           <Button
             type="button"
-            variant="dish"
+            variant="secondary"
             title="Clique aqui para voltar ao carrinho"
             onClick={() => dispatch(goToCart())}
           >

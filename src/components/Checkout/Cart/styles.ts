@@ -43,6 +43,12 @@ export const CartItem = styled.li`
     position: absolute;
     bottom: 8px;
     right: 8px;
+
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: rotate(15deg);
+    }
   }
 `
 
